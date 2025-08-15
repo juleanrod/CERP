@@ -137,32 +137,7 @@ p {
     display: flex;
     align-items: center;
     margin-top: 80px;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -2;
-}
-
-.hero-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--primary-navy);
-    opacity: 0.6;
-    z-index: -1;
+    background-color: var(--background-white);
 }
 
 .hero-content {
@@ -170,20 +145,20 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    color: var(--background-white);
+    color: var(--text-dark);
 }
 
 .hero-title {
     font-size: 42px;
     margin-bottom: 1.5rem;
-    color: var(--background-white);
+    color: var(--primary-navy);
 }
 
 .hero-subtitle {
     font-size: 18px;
     margin-bottom: 2rem;
-    color: var(--background-white);
-    opacity: 0.9;
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
 .cta-button {
@@ -208,10 +183,72 @@ p {
 
 /* Hero Form */
 .hero-form {
-    background-color: var(--background-white);
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 10px 30px var(--shadow);
+    border: 2px solid var(--border-light);
+    box-shadow: 0 8px 20px var(--shadow);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+
+
+.hero-form::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: moveLight 3s linear infinite;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+
+
+.hero-form:hover::after,
+.hero-form:focus-within::after {
+    opacity: 1;
+}
+
+.hero-form:hover,
+.hero-form:focus-within {
+    border-color: #00ff00;
+}
+
+@keyframes moveLight {
+    0% {
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    25% {
+        top: 50%;
+        left: calc(100% + 6px);
+        transform: translateY(-50%);
+    }
+    50% {
+        top: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    75% {
+        top: 50%;
+        left: -6px;
+        transform: translateY(-50%);
+    }
+    100% {
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .form-container {

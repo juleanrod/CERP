@@ -13,6 +13,23 @@ function submitForm(event) {
     // The form will submit to Formspree and redirect to the thank you page
 }
 
+// Test function for smooth scrolling
+function testSmoothScroll() {
+    console.log('Testing smooth scroll...');
+    const programsSection = document.getElementById('programs-preview');
+    console.log('Programs section found:', programsSection);
+    
+    if (programsSection) {
+        console.log('Scrolling to programs section...');
+        programsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    } else {
+        console.error('Programs section not found!');
+    }
+}
+
 // Form validation
 function validateForm(data) {
     const requiredFields = ['firstName', 'lastName', 'address', 'phone', 'email', 'utility', 'billAmount'];
@@ -137,26 +154,39 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileToggle.addEventListener('click', toggleMobileMenu);
     }
     
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links (only for internal anchors)
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            console.log('Nav link clicked:', targetId);
             
-            if (targetSection) {
-                targetSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            // Check if it's an internal anchor link (starts with #)
+            if (targetId.startsWith('#')) {
+                console.log('Internal anchor detected, preventing default');
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                console.log('Target section found:', targetSection);
                 
-                // Close mobile menu if open
-                const nav = document.querySelector('.nav');
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    document.querySelector('.mobile-menu-toggle').classList.remove('active');
+                if (targetSection) {
+                    console.log('Scrolling to:', targetId);
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const nav = document.querySelector('.nav');
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        document.querySelector('.mobile-menu-toggle').classList.remove('active');
+                    }
+                } else {
+                    console.error('Target section not found for:', targetId);
+                    console.log('Available IDs on page:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
                 }
+            } else {
+                console.log('External link detected, allowing normal navigation to:', targetId);
             }
         });
     });
@@ -190,10 +220,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            header.style.backgroundColor = 'rgba(250, 248, 245, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
         } else {
-            header.style.backgroundColor = '#FFFFFF';
+            header.style.backgroundColor = 'var(--background-white)';
             header.style.backdropFilter = 'none';
         }
         

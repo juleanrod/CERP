@@ -34,9 +34,10 @@
                 <nav class="nav">
                     <ul class="nav-list">
                         <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#programs" class="nav-link">Programs</a></li>
+                        <li><a href="#programs-preview" class="nav-link">Programs</a></li>
                         <li><a href="#about" class="nav-link">About</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><button onclick="testSmoothScroll()" style="background: none; border: none; color: inherit; cursor: pointer; font-size: inherit;">Test Scroll</button></li>
                     </ul>
                 </nav>
                 <div class="header-contact">
@@ -144,208 +145,45 @@
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
+    <!-- Programs Preview Section -->
+    <section class="programs-preview" id="programs-preview">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Energy Programs Available</h2>
                 <p class="section-subtitle">Choose from 13 proven programs designed to save you money</p>
             </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-image">
+            <div class="programs-preview-grid">
+                <div class="program-preview-card">
+                    <div class="program-preview-icon">
                         <span class="material-icons">home</span>
                     </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Residential Solar Installation Program</h3>
-                        <p class="program-description">Offset utility costs with rooftop solar and lock in lower rates.</p>
-                        <ul class="program-features">
-                            <li>Custom system design for your roof</li>
-                            <li>Multiple financing options available</li>
-                            <li>$0 down options for qualified homeowners</li>
-                        </ul>
-                    </div>
+                    <h3 class="program-preview-title">Solar Installation</h3>
+                    <p class="program-preview-description">Offset utility costs with rooftop solar and lock in lower rates.</p>
                 </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">battery_charging_full</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Battery Storage Incentive Program</h3>
-                        <p class="program-description">Store excess energy and use it during peak hours or outages.</p>
-                        <ul class="program-features">
-                            <li>Back-up essential loads</li>
-                            <li>Capture excess solar energy</li>
-                            <li>Incentive stacking available</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
+                <div class="program-preview-card">
+                    <div class="program-preview-icon">
                         <span class="material-icons">eco</span>
                     </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Energy Efficiency Home Upgrade</h3>
-                        <p class="program-description">Improve insulation, air sealing, and ductwork for maximum energy savings.</p>
-                        <ul class="program-features">
-                            <li>Air sealing and insulation</li>
-                            <li>Ductwork optimization</li>
-                            <li>Bundle with other upgrades</li>
-                        </ul>
-                    </div>
+                    <h3 class="program-preview-title">Energy Efficiency</h3>
+                    <p class="program-preview-description">Improve insulation, air sealing, and ductwork for maximum savings.</p>
                 </div>
-
-                <div class="program-card">
-                    <div class="program-image">
+                <div class="program-preview-card">
+                    <div class="program-preview-icon">
+                        <span class="material-icons">battery_charging_full</span>
+                    </div>
+                    <h3 class="program-preview-title">Battery Storage</h3>
+                    <p class="program-preview-description">Store excess energy and use it during peak hours or outages.</p>
+                </div>
+                <div class="program-preview-card">
+                    <div class="program-preview-icon">
                         <span class="material-icons">thermostat</span>
                     </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Smart Thermostat Rebate Program</h3>
-                        <p class="program-description">Get advanced thermostats that cut energy use by up to 15%.</p>
-                        <ul class="program-features">
-                            <li>Automated schedules</li>
-                            <li>Remote control access</li>
-                            <li>Easy installation</li>
-                        </ul>
-                    </div>
+                    <h3 class="program-preview-title">Smart Thermostats</h3>
+                    <p class="program-preview-description">Get advanced thermostats that cut energy use by up to 15%.</p>
                 </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">ac_unit</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">HVAC Replacement & Efficiency Program</h3>
-                        <p class="program-description">Upgrade to high-efficiency heating and cooling systems with rebates.</p>
-                        <ul class="program-features">
-                            <li>High-SEER heat pumps</li>
-                            <li>Professional sizing</li>
-                            <li>Lower monthly bills</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">lightbulb</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">LED Lighting Retrofit Program</h3>
-                        <p class="program-description">Replace all indoor/outdoor lighting with energy-saving LEDs at no cost.</p>
-                        <ul class="program-features">
-                            <li>Long-life LED bulbs</li>
-                            <li>Indoor and outdoor options</li>
-                            <li>Immediate energy savings</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">water_drop</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Water Heater Upgrade Program</h3>
-                        <p class="program-description">Switch to high-efficiency electric or hybrid water heaters.</p>
-                        <ul class="program-features">
-                            <li>High-efficiency models</li>
-                            <li>Fast recovery times</li>
-                            <li>Smart controls available</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">window</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Window & Door Efficiency Program</h3>
-                        <p class="program-description">Install energy-efficient windows and doors to reduce heating/cooling loss.</p>
-                        <ul class="program-features">
-                            <li>High-performance materials</li>
-                            <li>Improved comfort</li>
-                            <li>Noise reduction</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">roofing</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Roof Replacement with Solar Integration</h3>
-                        <p class="program-description">Replace your roof and prepare for solar at the same time.</p>
-                        <ul class="program-features">
-                            <li>Coordinate installations</li>
-                            <li>Bundle financing</li>
-                            <li>Single warranty coverage</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">ev_station</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Electric Vehicle Charging Station Program</h3>
-                        <p class="program-description">Get an at-home EV charger installed with incentives.</p>
-                        <ul class="program-features">
-                            <li>Level 2 home charger</li>
-                            <li>Panel upgrades included</li>
-                            <li>Smart charging schedules</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">search</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Home Energy Audit Program</h3>
-                        <p class="program-description">Professional assessment of your home's energy use with savings recommendations.</p>
-                        <ul class="program-features">
-                            <li>Whole-home audit</li>
-                            <li>Thermal camera testing</li>
-                            <li>Prioritized savings plan</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">schedule</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Demand Response Participation Program</h3>
-                        <p class="program-description">Earn bill credits for reducing usage during high-demand times.</p>
-                        <ul class="program-features">
-                            <li>Bill credits available</li>
-                            <li>Automated controls</li>
-                            <li>No-cost enrollment</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="program-image">
-                        <span class="material-icons">volunteer_activism</span>
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Low-Income Energy Assistance Program</h3>
-                        <p class="program-description">Special funding and rebates for qualifying households.</p>
-                        <ul class="program-features">
-                            <li>Expanded incentives</li>
-                            <li>Prioritized assistance</li>
-                            <li>Simple documentation</li>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+            <div class="programs-preview-cta">
+                <a href="programs.html" class="cta-button">View All Programs</a>
             </div>
         </div>
     </section>
@@ -462,7 +300,7 @@
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="programs.html">Programs</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>

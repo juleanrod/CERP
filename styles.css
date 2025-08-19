@@ -62,6 +62,20 @@ p {
     left: 0;
     right: 0;
     z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+/* Header when scrolled - pill-shaped floating container */
+.header.scrolled {
+    background: linear-gradient(90deg, rgba(45, 90, 61, 0.1) 0%, rgba(250, 248, 245, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    margin: 0.5rem 1rem;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 32px rgba(45, 90, 61, 0.15);
+    border: 1px solid rgba(45, 90, 61, 0.1);
+    transform: scale(0.98);
 }
 
 .header-content {
@@ -69,6 +83,12 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0;
+    transition: all 0.4s ease;
+}
+
+/* Adjust content padding when scrolled for pill shape */
+.header.scrolled .header-content {
+    padding: 0.75rem 1.5rem;
 }
 
 .logo {
@@ -111,6 +131,13 @@ p {
     font-weight: 600;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* Hide phone number on mobile for cleaner navbar */
+@media (max-width: 768px) {
+    .header-contact {
+        display: none;
+    }
 }
 
 .mobile-menu-toggle {
@@ -182,74 +209,122 @@ p {
 }
 
 /* Hero Form */
+/* Animate an angle custom property for the neon effect */
+@property --glow-deg { 
+    syntax: "<angle>"; 
+    inherits: true; 
+    initial-value: -90deg; 
+}
+
 .hero-form {
-    background-color: #ffffff;
+    --neon: #39ff14;              /* neon green */
+    --bg: #ffffff;                 /* form background color */
+    --bw: 2px;                     /* border width */
+    --blur: 0.8rem;                /* glow softness */
+    --intensity: 0.18;             /* outer glow opacity */
+    background-color: var(--bg);
     padding: 2rem;
     border-radius: 10px;
-    border: 2px solid var(--border-light);
+    border: var(--bw) solid var(--border-light);
     box-shadow: 0 8px 20px var(--shadow);
     position: relative;
+    isolation: isolate;
     transition: all 0.3s ease;
 }
 
-
-
-.hero-form::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #00ff00;
-    border-radius: 50%;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    animation: moveLight 3s linear infinite;
-    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+/* Hover and focus triggers rotation and shows glow */
+.hero-form:hover,
+.hero-form:focus-within {
+    animation: rotate 4s linear infinite;
+    border-color: transparent;
+    background:
+        linear-gradient(var(--bg) 0 0) padding-box,
+        conic-gradient(from var(--glow-deg), transparent 0 330deg, var(--neon) 0 360deg)
+            border-box;
 }
 
+/* Ensure focus state has higher priority and maintains animation */
+.hero-form:focus-within {
+    animation: rotate 4s linear infinite !important;
+    border-color: transparent !important;
+    background:
+        linear-gradient(var(--bg) 0 0) padding-box,
+        conic-gradient(from var(--glow-deg), transparent 0 330deg, var(--neon) 0 360deg)
+            border-box !important;
+}
 
+/* Rotating the angle makes the light "wrap" around */
+@keyframes rotate { 
+    to { 
+        --glow-deg: 270deg; 
+    } 
+}
 
-.hero-form:hover::after,
-.hero-form:focus-within::after {
+/* Inner soft glow */
+.hero-form::before,
+.hero-form::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;                   /* hidden by default */
+    transition: opacity 0.2s linear;
+}
+
+.hero-form:hover::before,
+.hero-form:focus-within::before {
+    z-index: -1;
+    inset: 0.35rem;
+    background: var(--bg);
+    filter: blur(var(--blur));
     opacity: 1;
 }
 
-.hero-form:hover,
-.hero-form:focus-within {
-    border-color: #00ff00;
+/* Outer halo following the rotating conic gradient */
+.hero-form:hover::after,
+.hero-form:focus-within::after {
+    z-index: -2;
+    inset: -0.8rem;
+    background: conic-gradient(from var(--glow-deg),
+                transparent 0 330deg, var(--neon) 0 360deg);
+    filter: blur(var(--blur));
+    opacity: var(--intensity);
 }
 
-@keyframes moveLight {
-    0% {
-        top: -6px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    25% {
-        top: 50%;
-        left: calc(100% + 6px);
-        transform: translateY(-50%);
-    }
-    50% {
-        top: calc(100% + 6px);
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    75% {
-        top: 50%;
-        left: -6px;
-        transform: translateY(-50%);
-    }
-    100% {
-        top: -6px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+/* Ensure focus state maintains glow effects with higher priority */
+.hero-form:focus-within::before {
+    z-index: -1 !important;
+    inset: 0.35rem !important;
+    background: var(--bg) !important;
+    filter: blur(var(--blur)) !important;
+    opacity: 1 !important;
 }
+
+.hero-form:focus-within::after {
+    z-index: -2 !important;
+    inset: -0.8rem !important;
+    background: conic-gradient(from var(--glow-deg),
+                transparent 0 330deg, var(--neon) 0 360deg) !important;
+    filter: blur(var(--blur)) !important;
+    opacity: var(--intensity) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .form-container {
     color: var(--text-dark);
@@ -393,24 +468,30 @@ p {
 }
 
 .program-card {
-    background-color: var(--background-white);
+    background-color: #ffffff;
+    padding: 2rem;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px var(--shadow);
-    transition: transform 0.3s ease;
+    text-align: center;
+    border: 2px solid var(--border-light);
+    transition: all 0.3s ease;
 }
 
 .program-card:hover {
     transform: translateY(-5px);
+    border-color: var(--primary-navy);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
 .program-image {
-    height: 200px;
-    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background-color: var(--primary-navy);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--background-white) 0%, var(--gradient-light) 100%);
+    color: var(--background-white);
 }
 
 .program-image img,
@@ -421,46 +502,27 @@ p {
     transition: transform 0.3s ease;
 }
 
-.program-image svg,
 .program-image .material-icons {
-    width: 120px;
-    height: 120px;
-    display: block;
-    margin: 0 auto;
+    font-size: 28px;
 }
 
-.program-image .material-icons {
-    font-size: 100px;
-    color: var(--primary-navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
 
-.program-card:hover .program-image img,
-.program-card:hover .program-image svg {
-    transform: scale(1.05);
-}
-
-.program-card:hover .program-image svg {
-    filter: drop-shadow(0 4px 8px rgba(45, 90, 61, 0.2));
-}
 
 .program-content {
-    padding: 1.5rem;
+    padding: 0;
 }
 
 .program-title {
     color: var(--primary-navy);
+    font-size: 1.3rem;
     margin-bottom: 1rem;
-    font-size: 20px;
+    font-weight: 600;
 }
 
 .program-description {
     color: var(--text-light);
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 .program-features {
@@ -747,6 +809,7 @@ p {
     
     .hero-title {
         font-size: 32px;
+        margin-top: 2rem;
     }
     
     .hero-subtitle {
@@ -785,6 +848,7 @@ p {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 28px;
+        margin-top: 1.5rem;
     }
     
     .hero-subtitle {
@@ -866,7 +930,7 @@ p {
 
 .success-icon .material-icons {
     font-size: 120px;
-    color: var(--callout-green);
+    color: var(--primary-navy);
 }
 
 .thank-you-title {
@@ -899,11 +963,13 @@ p {
 }
 
 .step-item {
-    background: var(--background-white);
+    background: #ffffff;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px var(--shadow);
+    border: 2px solid var(--border-light);
+    box-shadow: 0 8px 20px var(--shadow);
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .step-icon {
@@ -912,7 +978,7 @@ p {
 
 .step-icon .material-icons {
     font-size: 48px;
-    color: var(--accent-gold);
+    color: var(--primary-navy);
 }
 
 .step-item h3 {
@@ -925,12 +991,20 @@ p {
     line-height: 1.6;
 }
 
+.step-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-navy);
+    box-shadow: 0 12px 25px var(--shadow);
+}
+
 .contact-info {
     margin-bottom: 3rem;
     padding: 2rem;
-    background: var(--background-white);
+    background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 5px 15px var(--shadow);
+    border: 2px solid var(--border-light);
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: all 0.3s ease;
 }
 
 .contact-info h3 {
@@ -954,7 +1028,7 @@ p {
 
 .contact-item .material-icons {
     font-size: 32px;
-    color: var(--accent-gold);
+    color: var(--primary-navy);
 }
 
 .contact-item a {
@@ -988,24 +1062,27 @@ p {
 .btn-primary {
     background-color: var(--primary-navy);
     color: var(--background-white);
+    border: 2px solid var(--primary-navy);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-gold);
+    background-color: var(--background-white);
     color: var(--primary-navy);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
 }
 
 .btn-secondary {
-    background-color: var(--accent-gold);
+    background-color: var(--background-white);
     color: var(--primary-navy);
-    border: 2px solid var(--accent-gold);
+    border: 2px solid var(--primary-navy);
 }
 
 .btn-secondary:hover {
-    background-color: var(--background-white);
-    color: var(--accent-gold);
+    background-color: var(--primary-navy);
+    color: var(--background-white);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
 }
 
 /* Mobile Responsiveness for Thank You Page */

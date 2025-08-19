@@ -13,22 +13,7 @@ function submitForm(event) {
     // The form will submit to Formspree and redirect to the thank you page
 }
 
-// Test function for smooth scrolling
-function testSmoothScroll() {
-    console.log('Testing smooth scroll...');
-    const programsSection = document.getElementById('programs-preview');
-    console.log('Programs section found:', programsSection);
-    
-    if (programsSection) {
-        console.log('Scrolling to programs section...');
-        programsSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    } else {
-        console.error('Programs section not found!');
-    }
-}
+
 
 // Form validation
 function validateForm(data) {
@@ -128,13 +113,22 @@ function showError(message) {
     }, 5000);
 }
 
-// Smooth scrolling to form
+// Smooth scrolling to form and focus on first field
 function scrollToForm() {
     const form = document.querySelector('.hero-form');
+    const firstInput = form.querySelector('input, select');
+    
     form.scrollIntoView({ 
         behavior: 'smooth',
         block: 'center'
     });
+    
+    // Focus on the first input field after scrolling completes
+    setTimeout(() => {
+        if (firstInput) {
+            firstInput.focus();
+        }
+    }, 800); // Wait for scroll animation to complete
 }
 
 // Mobile menu toggle
@@ -220,11 +214,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
-            header.style.backgroundColor = 'rgba(250, 248, 245, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+            header.classList.add('scrolled');
         } else {
-            header.style.backgroundColor = 'var(--background-white)';
-            header.style.backdropFilter = 'none';
+            header.classList.remove('scrolled');
         }
         
         lastScrollTop = scrollTop;
@@ -366,4 +358,6 @@ const additionalStyles = `
 // Inject additional styles
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
-document.head.appendChild(styleSheet); 
+document.head.appendChild(styleSheet);
+
+ 

@@ -325,34 +325,7 @@ const additionalStyles = `
         100% { transform: rotate(360deg); }
     }
     
-    .nav.active {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .nav.active .nav-list {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+
 `;
 
 // Inject additional styles

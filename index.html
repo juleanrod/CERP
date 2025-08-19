@@ -34,9 +34,8 @@
                 <nav class="nav">
                     <ul class="nav-list">
                         <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#programs-preview" class="nav-link">Programs</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="programs.html" class="nav-link">Programs</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
 
                     </ul>
                 </nav>
@@ -55,49 +54,14 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
+            <h2 class="hero-header">California Energy Relief Program</h2>
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">Lower Your Energy Bills. Protect Your Home. Qualify Today.</h1>
                     <p class="hero-subtitle">We connect California homeowners to approved energy programs that lower utility costs, lock rates, and maximize rebates & tax credits.</p>
-                    <button class="cta-button" onclick="scrollToForm()">Check My Eligibility</button>
+                    <a href="contact.html" class="cta-button">Check My Eligibility</a>
                 </div>
-                <div class="hero-form">
-                    <div class="form-container">
-                        <h3 class="form-title">Check Your Eligibility</h3>
-                        <form id="eligibilityForm" class="eligibility-form" action="https://formspree.io/f/xzzvwpew" method="POST">
-                            <div class="form-group">
-                                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="address" name="address" placeholder="Address" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <select id="utility" name="utility" required>
-                                    <option value="">Select Utility Provider</option>
-                                    <option value="pg&e">PG&E</option>
-                                    <option value="sce">Southern California Edison</option>
-                                    <option value="sdge">San Diego Gas & Electric</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <input type="number" id="billAmount" name="billAmount" placeholder="Last Month's Bill Amount ($)" required>
-                            </div>
-                            <input type="hidden" name="_subject" value="New CERP Eligibility Check">
-                            <input type="hidden" name="_next" value="thank-you.html">
-                            <button type="submit" class="submit-button">Check Eligibility</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -136,6 +100,30 @@
                     </div>
                     <h3 class="benefit-title">20-50% Monthly Bill Savings</h3>
                     <p class="benefit-description">See significant reductions in your monthly energy bills with our proven programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utility Partners Section -->
+    <section class="utility-partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Utility Companies We Work With</h2>
+                <p class="section-subtitle">We partner with major California utility providers to maximize your savings</p>
+            </div>
+            <div class="utility-logos">
+                <div class="utility-logo">
+                    <img src="assets/ladwp-logo.svg" alt="LADWP Logo" class="utility-logo-img">
+                </div>
+                <div class="utility-logo">
+                    <img src="assets/edison-logo.svg" alt="Southern California Edison Logo" class="utility-logo-img">
+                </div>
+                <div class="utility-logo">
+                    <img src="assets/pge-logo.png" alt="PG&E Logo" class="utility-logo-img">
+                </div>
+                <div class="utility-logo">
+                    <img src="assets/sdge-logo.svg" alt="SDG&E Logo" class="utility-logo-img">
                 </div>
             </div>
         </div>

@@ -136,8 +136,15 @@ function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
     const toggle = document.querySelector('.mobile-menu-toggle');
     
+    console.log('Mobile menu toggle clicked');
+    console.log('Nav element:', nav);
+    console.log('Toggle element:', toggle);
+    
     nav.classList.toggle('active');
     toggle.classList.toggle('active');
+    
+    console.log('Nav has active class:', nav.classList.contains('active'));
+    console.log('Toggle has active class:', toggle.classList.contains('active'));
 }
 
 // Add event listeners when DOM is loaded

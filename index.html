@@ -9,6 +9,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
+    <!-- Resource Hints for Performance -->
+    <link rel="preload" href="assets/cerp-logo.png" as="image" type="image/png">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" as="style">
+    
+    <!-- Prefetch non-critical resources -->
+    <link rel="prefetch" href="assets/programs-hero-image.jpeg" as="image" type="image/jpeg">
+    <link rel="prefetch" href="programs.html">
+    <link rel="prefetch" href="contact.html">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,15 +66,16 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <img src="assets/hero-image.jpeg" alt="Hero Background" class="hero-background">
+        <div class="hero-overlay"></div>
         <div class="container">
-            <h2 class="hero-header">California Energy Relief Program</h2>
             <div class="hero-content">
+                <h2 class="hero-header">California Energy Relief Program</h2>
                 <div class="hero-text">
                     <h1 class="hero-title">Lower Your Energy Bills. Protect Your Home. Qualify Today.</h1>
                     <p class="hero-subtitle">We connect California homeowners to approved energy programs that lower utility costs, lock rates, and maximize rebates & tax credits.</p>
                     <a href="contact.html" class="cta-button">Check My Eligibility</a>
                 </div>
-
             </div>
         </div>
     </section>
@@ -117,16 +128,16 @@
             </div>
             <div class="utility-logos">
                 <div class="utility-logo">
-                    <img src="assets/ladwp-logo.svg" alt="LADWP Logo" class="utility-logo-img">
+                    <img src="assets/ladwp-logo.svg" alt="LADWP Logo" class="utility-logo-img" loading="lazy">
                 </div>
                 <div class="utility-logo">
-                    <img src="assets/edison-logo.svg" alt="Southern California Edison Logo" class="utility-logo-img">
+                    <img src="assets/edison-logo.svg" alt="Southern California Edison Logo" class="utility-logo-img" loading="lazy">
                 </div>
                 <div class="utility-logo">
-                    <img src="assets/pge-logo.png" alt="PG&E Logo" class="utility-logo-img">
+                    <img src="assets/pge-logo.png" alt="PG&E Logo" class="utility-logo-img" loading="lazy">
                 </div>
                 <div class="utility-logo">
-                    <img src="assets/sdge-logo.svg" alt="SDG&E Logo" class="utility-logo-img">
+                    <img src="assets/sdge-logo.svg" alt="SDG&E Logo" class="utility-logo-img" loading="lazy">
                 </div>
             </div>
         </div>

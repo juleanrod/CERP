@@ -147,6 +147,27 @@ function toggleMobileMenu() {
     console.log('Toggle has active class:', toggle.classList.contains('active'));
 }
 
+// FAQ toggle function
+function toggleFAQ(questionElement) {
+    const faqItem = questionElement.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all other FAQ items
+    const allFaqItems = document.querySelectorAll('.faq-item');
+    allFaqItems.forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove('active');
+        }
+    });
+    
+    // Toggle current FAQ item
+    if (isActive) {
+        faqItem.classList.remove('active');
+    } else {
+        faqItem.classList.add('active');
+    }
+}
+
 // Add event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle

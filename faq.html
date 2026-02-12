@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | California Energy Relief Program</title>
+    <meta name="description"
+        content="Get answers to common questions about the California Energy Relief Program, eligibility requirements, funding sources, and the application process.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/cerp-logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preload" href="assets/cerp-logo.png" as="image" type="image/png">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+        as="style">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--callout-green) 100%);
+            padding: 120px 0 60px;
+            color: var(--background-white);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .faq-category {
+            margin-bottom: 4rem;
+        }
+
+        .faq-category-title {
+            color: var(--primary-navy);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/cerp-logo.png" alt="CERP Logo" class="logo-img">
+                    <span class="logo-text">
+                        <span class="logo-text-full">California Energy Relief Program</span>
+                        <span class="logo-text-short">CERP</span>
+                    </span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="programs.html" class="nav-link">Programs</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-contact">
+                    <a href="tel:+1-800-CERP-NOW" class="phone-link">800-CERP-NOW</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: 3rem;">Frequently Asked Questions</h1>
+            <p class="hero-subtitle">Common questions about eligibility, checking your status, and available programs.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-section">
+        <div class="container">
+
+            <!-- Category 1: General & Eligibility -->
+            <div class="faq-category">
+                <h3 class="faq-category-title">General & Eligibility</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>How do I know if I qualify?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Eligibility is based primarily on your location, utility provider, and homeowner status.
+                                Some programs also consider your average monthly energy bill or household income (for
+                                CARE/FERA). The quickest way to find out is to use our <a
+                                    href="contact.html">Eligibility Check tool</a>, which takes less than a minute.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Is this a government program?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The California Energy Relief Program (CERP) facilitates access to various state, federal,
+                                and utility-sponsored programs. While we connect you to official government incentives
+                                (like SGIP or Federal Tax Credits) and utility rebates, CERP itself is an independent
+                                program facilitator, not a government agency.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Do I need to own my home to apply?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most major infrastructure programs (like solar, battery storage, or window upgrades)
+                                require you to be the homeowner. However, programs like CARE, FERA, and certain
+                                appliance rebates are available to renters as well.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Will this replace my current utility company?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No. You will keep your current utility provider (e.g., PG&E, SCE, SDG&E, or LADWP). These
+                                programs are designed to work <em>with</em> your existing utility to lower your bill and
+                                improve efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Funding & Costs -->
+            <div class="faq-category">
+                <h3 class="faq-category-title">Funding & Costs</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Are there upfront costs?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>It depends on the program. Many programs, such as the Home Solar Ownership Program
+                                (`bill-swap` models) or income-qualified weatherization, have $0 upfront cost. Others,
+                                like appliance rebates, work by refunding you a portion of the purchase price.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Are these loans or grants?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Both options exist. Some programs are direct grants or rebates (money you don't pay
+                                back). Others are low-interest financing plans (like REEL-in) designed to be paid for by
+                                your energy savings. We will clearly outline the type of funding you qualify for.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>How much can I save?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Savings vary by household. Families on the CARE program save 30-35% instantly. Solar
+                                ownership programs often reduce electricity bills by 40-70%. We estimate your potential
+                                savings during the eligibility review.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Application Process -->
+            <div class="faq-category">
+                <h3 class="faq-category-title">Application Process</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>How long does the approval process take?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once you submit your initial information, we typically verify eligibility within 24-48
+                                hours. Installation-based programs (like solar or windows) can take several weeks to
+                                permit and schedule, while rate plan changes can take effect in 1-2 billing cycles.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>What documents do I need?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To start, we just need your basic contact info and approximate bill amount. Later, you
+                                may need to provide a recent utility bill to verify usage history and finalize your
+                                program selection.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>I already have solar. Can I still apply?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! You may still qualify for battery storage incentives (SGIP), smart thermostat
+                                rebates, or efficiency upgrades (windows/insulation) that can further reduce your
+                                remaining true-up bill.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-cta" style="margin-top: 4rem; text-align: center;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Still have questions? Our team is here to help.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/cerp-logo.png" alt="CERP Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">California Energy Relief Program</span>
+                </div>
+                <p class="footer-description">Connecting California homeowners to approved energy programs that lower
+                    costs and maximize savings.</p>
+
+                <div class="footer-sections-container">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <div class="footer-contact">
+                            <p><strong>Phone:</strong> <a href="tel:+1-800-CERP-NOW">800-CERP-NOW</a></p>
+                            <p><strong>Email:</strong> <a
+                                    href="mailto:info@californiaenergyrelief.com">info@californiaenergyrelief.com</a>
+                            </p>
+                            <p><strong>Address:</strong> California, USA</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <div class="footer-links">
+                            <p><a href="index.html">Home</a></p>
+                            <p><a href="programs.html">Programs</a></p>
+                            <p><a href="blog.html">Blog</a></p>
+                            <p><a href="faq.html">FAQ</a></p>
+                            <p><a href="contact.html">Contact</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="compliance-text">
+                    <p>CERP (California Energy Relief Program) is an independent program facilitator and is not a
+                        government agency. Incentives and eligibility vary by address, utility, and program
+                        availability.</p>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 California Energy Relief Program. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Savings Blog | California Energy Relief Program</title>
+    <meta name="description"
+        content="Latest news, guides, and updates on California energy programs, SGIP funding, solar mandates, and rebate opportunities.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/cerp-logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-hero {
+            padding: 120px 0 60px;
+            background-color: var(--background-white);
+            text-align: center;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow);
+            border-color: var(--primary-navy);
+        }
+
+        .article-image {
+            height: 200px;
+            background-color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .article-excerpt {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/cerp-logo.png" alt="CERP Logo" class="logo-img">
+                    <span class="logo-text">
+                        <span class="logo-text-full">California Energy Relief Program</span>
+                        <span class="logo-text-short">CERP</span>
+                    </span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="programs.html" class="nav-link">Programs</a></li>
+                        <li><a href="blog.html" class="nav-link" style="color: var(--accent-gold);">Blog</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-contact">
+                    <a href="tel:+1-800-CERP-NOW" class="phone-link">800-CERP-NOW</a>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="section-title">Latest Energy News & Updates</h1>
+            <p class="section-subtitle">Stay informed about California's energy landscape</p>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="programs">
+        <div class="container">
+            <div class="programs-grid">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <span class="material-icons" style="font-size: 64px;">solar_power</span>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">February 10, 2026</span>
+                        <h2 class="article-title">Understanding SGIP: How to Claim Your Share of $280 Million</h2>
+                        <p class="article-excerpt">The Self-Generation Incentive Program (SGIP) is offering massive
+                            rebates for battery storage. Learn if you qualify for up to 100% coverage.</p>
+                        <a href="blog/understanding-sgip.html" class="read-more">Read Article <span
+                                class="material-icons" style="font-size: 16px;">arrow_forward</span></a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <span class="material-icons" style="font-size: 64px;">trending_up</span>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">January 28, 2026</span>
+                        <h2 class="article-title">NEM 3.0 Explained: Is Solar Still Worth It in California?</h2>
+                        <p class="article-excerpt">California's net metering rules have changed. Discover how the new
+                            billing structure affects solar savings and why battery storage is now essential.</p>
+                        <a href="blog/nem-3-explained.html" class="read-more">Read Article <span class="material-icons"
+                                style="font-size: 16px;">arrow_forward</span></a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <span class="material-icons" style="font-size: 64px;">savings</span>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">January 15, 2026</span>
+                        <h2 class="article-title">Top 5 California Energy Rebates for 2025-2026</h2>
+                        <p class="article-excerpt">From heat pumps to smart thermostats, we've compiled the definitive
+                            list of active rebates available to California residents this year.</p>
+                        <a href="blog/energy-rebates-2025.html" class="read-more">Read Article <span
+                                class="material-icons" style="font-size: 16px;">arrow_forward</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="trust" style="background-color: var(--background-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Have Questions?</h2>
+                <p class="section-subtitle">Our team is here to help you navigate available energy programs.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/cerp-logo.png" alt="CERP Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">California Energy Relief Program</span>
+                </div>
+                <p class="footer-description">Connecting California homeowners to approved energy programs that lower
+                    costs and maximize savings.</p>
+
+                <div class="footer-sections-container">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <div class="footer-contact">
+                            <p><strong>Phone:</strong> <a href="tel:+1-800-CERP-NOW">800-CERP-NOW</a></p>
+                            <p><strong>Email:</strong> <a
+                                    href="mailto:info@californiaenergyrelief.com">info@californiaenergyrelief.com</a>
+                            </p>
+                            <p><strong>Address:</strong> California, USA</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <div class="footer-links">
+                            <p><a href="index.html">Home</a></p>
+                            <p><a href="programs.html">Programs</a></p>
+                            <p><a href="blog.html">Blog</a></p>
+                            <p><a href="faq.html">FAQ</a></p>
+                            <p><a href="contact.html">Contact</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="compliance-text">
+                    <p>CERP (California Energy Relief Program) is an independent program facilitator and is not a
+                        government agency. Incentives and eligibility vary by address, utility, and program
+                        availability.</p>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 California Energy Relief Program. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

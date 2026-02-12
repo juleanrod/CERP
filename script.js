@@ -1,17 +1,4 @@
-// Form submission handling for Formspree
-function submitForm(event) {
-    // Formspree handles the submission automatically
-    // We just need to show loading state and handle success
-
-    // Show loading state
-    const submitButton = event.target.querySelector('.submit-button');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Submitting...';
-    submitButton.disabled = true;
-
-    // Formspree will handle the rest
-    // The form will submit to Formspree and redirect to the thank you page
-}
+// Form submission handling is managed by the event listener at the bottom of the file
 
 
 
@@ -430,8 +417,6 @@ const form = document.getElementById('eligibilityForm');
 if (form) {
     form.addEventListener('submit', function (e) {
         // Validation for step 2 is handled by HTML5 'required' attribute on submit
-        // Custom additional validation can go here if needed
-
         // Show loading state using original logic
         const submitBtn = this.querySelector('button[type="submit"]');
         if (submitBtn) {

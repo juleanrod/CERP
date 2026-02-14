@@ -11,6 +11,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/cerp-logo.png">
 
+    <!-- Deferred Script -->
+    <script src="script.js" defer></script>
+
+    <!-- Resource Hints for Performance -->
+    <link rel="preload" href="assets/cerp-logo.png" as="image" type="image/png">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+        as="style">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +57,10 @@
                     </ul>
                 </nav>
                 <div class="header-contact">
-                    <a href="tel:+1-800-CERP-NOW" class="phone-link">800-CERP-NOW</a>
+                    <a href="tel:+1-877-359-8975" class="phone-link">
+                        <span class="material-icons">phone</span>
+                        877-359-8975
+                    </a>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                     <span></span>
@@ -103,7 +116,7 @@
                             <span class="material-icons">phone</span>
                             <div>
                                 <strong>Call Us:</strong><br>
-                                <a href="tel:+1-800-CERP-NOW">800-CERP-NOW</a>
+                                <a href="tel:+1-877-359-8975">877-359-8975</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -138,7 +151,7 @@
                     <div class="footer-section">
                         <h4 class="footer-title">Contact Info</h4>
                         <div class="footer-contact">
-                            <p><strong>Phone:</strong> <a href="tel:+1-800-CERP-NOW">800-CERP-NOW</a></p>
+                            <p><strong>Phone:</strong> <a href="tel:+1-877-359-8975">877-359-8975</a></p>
                             <p><strong>Email:</strong> <a
                                     href="mailto:info@californiaenergyrelief.com">info@californiaenergyrelief.com</a>
                             </p>
@@ -170,8 +183,10 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- Floating Phone Button (Mobile Only) -->
+    <a href="tel:+1-877-359-8975" class="floating-phone-btn" aria-label="Call Us">
+        <span class="material-icons">phone</span>
+    </a>
 </body>
 
 </html>

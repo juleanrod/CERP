@@ -5,8 +5,11 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 :root {
@@ -139,11 +142,7 @@ p {
     padding: 0.75rem 1.5rem;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+
 
 .logo-img {
     height: 60px;
@@ -152,9 +151,10 @@ p {
 
 .logo-text {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
-    color: var(--text-dark);
+    color: var(--callout-green);
+    line-height: 1.2;
 }
 
 /* Full text for desktop */
@@ -204,20 +204,32 @@ p {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
+    color: var(--callout-green);
+    /* Darker green for better contrast */
+    font-weight: 600;
+    /* Increased weight */
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--accent-gold);
 }
 
 .header-contact .phone-link {
-    color: var(--accent-gold);
+    color: var(--callout-green);
+    /* Darker green for better contrast */
     font-weight: 600;
     text-decoration: none;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.header-contact .phone-link:hover {
+    color: var(--accent-gold);
 }
 
 /* Hide phone number on mobile for cleaner navbar */
@@ -735,32 +747,47 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
     position: relative;
     z-index: 1;
+    flex-wrap: wrap;
 }
 
 .stat-item {
     text-align: center;
     flex: 1;
-    max-width: 200px;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Matched footer-logo */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
 }
 
 .stat-number {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--background-white);
+    /* Match footer logo text */
     margin-bottom: 0.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .stat-label {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    /* Match footer description */
+    text-transform: none;
+    letter-spacing: 0.5px;
 }
 
 /* Mobile responsive for stats bar */
@@ -791,7 +818,7 @@ p {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -922,7 +949,7 @@ p {
 
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -2421,4 +2448,87 @@ p {
 .article-hero .breadcrumb a:hover {
     color: var(--background-white);
     text-decoration: underline;
+}
+
+/* Mobile Floating Phone Button */
+.floating-phone-btn {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+    background-color: var(--callout-green);
+    color: var(--background-white);
+    border: 2px solid var(--border-light);
+    /* Greenlight border for contrast */
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-phone-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-navy);
+}
+
+.floating-phone-btn .material-icons {
+    font-size: 32px;
+}
+
+/* Show floating button on mobile */
+@media (max-width: 975px) {
+    .floating-phone-btn {
+        display: flex;
+    }
+}
+
+/* Blog Article Styles */
+.article-hero {
+    padding: 120px 0 40px;
+    background-color: var(--background-white);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.article-body h2 {
+    color: var(--primary-navy);
+    margin-top: 2rem;
+}
+
+.article-body li {
+    margin-bottom: 1rem;
+}
+
+.breadcrumb {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+/* Mobile adjustments for article body */
+@media (max-width: 768px) {
+    .article-body {
+        padding: 40px 1.5rem;
+        /* Better side padding for mobile */
+        font-size: 16px;
+        /* Slightly smaller font for readability on small screens */
+    }
 }

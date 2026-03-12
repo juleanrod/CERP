@@ -36,6 +36,24 @@ body {
     /* Darker green for hover states */
 }
 
+/* ============================================
+   TEMPORARY: Hide phone number site-wide
+   Remove this block to restore phone visibility.
+   The elements remain in the DOM for SEO indexing.
+   ============================================ */
+.header-contact,
+.floating-phone-btn,
+.footer-contact p:has(a[href^="tel:"]),
+.contact-item:has(a[href^="tel:"]) {
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;

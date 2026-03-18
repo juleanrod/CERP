@@ -623,6 +623,48 @@ p {
     font-weight: 600;
 }
 
+/* Form Acknowledgment Checkbox */
+.form-acknowledgment {
+    margin: 1.5rem 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    accent-color: var(--callout-green);
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.checkbox-label a {
+    color: var(--callout-green);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.checkbox-label a:hover {
+    color: var(--accent-gold);
+}
+
+.checkbox-error {
+    outline: 2px solid #721c24 !important;
+    outline-offset: 2px;
+}
+
 .form-step {
     display: none;
     animation: fadeIn 0.5s ease;

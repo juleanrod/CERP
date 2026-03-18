@@ -416,7 +416,28 @@ function scrollToFormTop() {
 const form = document.getElementById('eligibilityForm');
 if (form) {
     form.addEventListener('submit', function (e) {
-        // Validation for step 2 is handled by HTML5 'required' attribute on submit
+        // Validate terms agreement checkbox
+        const termsCheckbox = document.getElementById('terms-agreement');
+        if (termsCheckbox && !termsCheckbox.checked) {
+            e.preventDefault(); // Stop submission
+            showError('You must agree to the terms to continue.');
+            termsCheckbox.classList.add('checkbox-error');
+            
+            // Scroll to the checkbox
+            termsCheckbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Remove error class on change
+            termsCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.classList.remove('checkbox-error');
+                    const existingError = document.querySelector('.error-message');
+                    if (existingError) existingError.remove();
+                }
+            }, { once: true });
+            
+            return;
+        }
+
         // Show loading state using original logic
         const submitBtn = this.querySelector('button[type="submit"]');
         if (submitBtn) {

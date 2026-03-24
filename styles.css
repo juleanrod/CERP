@@ -806,7 +806,7 @@ p {
 .stats-content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 2rem;
     position: relative;
     z-index: 1;
@@ -825,6 +825,9 @@ p {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .stat-item:hover {
@@ -924,6 +927,7 @@ p {
 
 .benefit-description {
     color: var(--text-light);
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -1190,6 +1194,8 @@ p {
 
 .step-description {
     color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* Trust Section */
@@ -1257,6 +1263,8 @@ p {
 
 .testimonial-text {
     font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--text-dark);
 }
@@ -2196,6 +2204,7 @@ p {
 
 .program-preview-description {
     color: var(--text-light);
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 0;
 }

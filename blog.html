@@ -105,11 +105,29 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
+        .read-more::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: var(--accent-gold);
+        }
+
+        .article-card:hover .read-more::before,
+        .read-more:hover::before {
+            opacity: 1;
+            left: -15px;
+        }
+
+        .article-card:hover .read-more,
         .read-more:hover {
-            text-decoration: underline;
+            padding-left: 12px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -161,7 +179,20 @@
     <section class="programs">
         <div class="container">
             <div class="programs-grid">
-                <!-- Article 1 -->
+                <!-- Article 1 (New) -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <span class="material-icons" style="font-size: 64px;">electric_bolt</span>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">March 23, 2026</span>
+                        <h2 class="article-title">How AI & Global Events Are Driving Up Energy Costs</h2>
+                        <p class="article-excerpt">Discover how Artificial Intelligence and global geopolitical events are combining to drive up utility costs in California (and how to protect your wallet).</p>
+                        <a href="blog/the-perfect-energy-storm.html" class="read-more">Read Article</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
                 <article class="article-card">
                     <div class="article-image">
                         <span class="material-icons" style="font-size: 64px;">solar_power</span>
@@ -171,8 +202,7 @@
                         <h2 class="article-title">Understanding SGIP: How to Claim Your Share of $280 Million</h2>
                         <p class="article-excerpt">The Self-Generation Incentive Program (SGIP) is offering massive
                             rebates for battery storage. Learn if you qualify for up to 100% coverage.</p>
-                        <a href="blog/understanding-sgip.html" class="read-more">Read Article <span
-                                class="material-icons" style="font-size: 16px;">arrow_forward</span></a>
+                        <a href="blog/understanding-sgip.html" class="read-more">Read Article</a>
                     </div>
                 </article>
 
@@ -186,8 +216,7 @@
                         <h2 class="article-title">NEM 3.0 Explained: Is Solar Still Worth It in California?</h2>
                         <p class="article-excerpt">California's net metering rules have changed. Discover how the new
                             billing structure affects solar savings and why battery storage is now essential.</p>
-                        <a href="blog/nem-3-explained.html" class="read-more">Read Article <span class="material-icons"
-                                style="font-size: 16px;">arrow_forward</span></a>
+                        <a href="blog/nem-3-explained.html" class="read-more">Read Article</a>
                     </div>
                 </article>
 
@@ -201,8 +230,7 @@
                         <h2 class="article-title">Top 5 California Energy Rebates for 2025-2026</h2>
                         <p class="article-excerpt">From heat pumps to smart thermostats, we've compiled the definitive
                             list of active rebates available to California residents this year.</p>
-                        <a href="blog/energy-rebates-2025.html" class="read-more">Read Article <span
-                                class="material-icons" style="font-size: 16px;">arrow_forward</span></a>
+                        <a href="blog/energy-rebates-2025.html" class="read-more">Read Article</a>
                     </div>
                 </article>
             </div>
